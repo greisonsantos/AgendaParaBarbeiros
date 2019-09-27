@@ -1,12 +1,14 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
 const path = require("path");
+const session = require("express-session");
+const FileStore = require("session-file-store")(session);
 
 class App {
   constructor() {
     this.express = express();
     this.isDev = process.env.NODE_ENV != "production"; //development or test or production
-    
+
     //ateção para ordem
     this.middlewares();
     this.views();
@@ -16,6 +18,17 @@ class App {
   // para lidar com formularios
   middlewares() {
     this.express.use(express.urlencoded({ extended: false }));
+    this.express.use(
+      session({
+        name: "root",
+        secret: "MyAppSecret",
+        resave: true,
+        store: new FileStore({
+          path: path.resolve(__dirname, "..", "tmp", "sessios")
+        }),
+        saveUninitialized: true
+      })
+    );
   }
 
   views() {

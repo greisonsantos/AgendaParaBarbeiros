@@ -18,6 +18,9 @@ class SessionControle {
       console.log("incorrect password");
       return res.redirect("/");
     }
+    //se o email e senha estiver ok
+    //redis para salvar a sessão ou banco nosql
+    req.session.user = user;
 
     return res.redirect("/app/dashboard");
   }
