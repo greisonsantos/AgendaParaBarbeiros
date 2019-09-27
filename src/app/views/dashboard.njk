@@ -1,0 +1,27 @@
+{%extends "layouts/default.njk"%}
+
+{%block body %}
+<link rel="stylesheet" href="../styles.css" />
+
+<div class="content">
+<link rel="stylesheet" href="styles.css" />
+
+ <strong>OLa, {{user.name}} </strong>
+ <p> Inicie um agendamento escolhendo um desses profissionais abaixo:</p>
+
+<ul class="providers"> </ul>
+    {% for provider in providers %}
+       <li class="provider">
+         <div>
+           <img src="/files/{{provider.avatar}}" />
+           <strong>{{ provider.name}} </strong>
+         </div>
+
+         <a href=""> +</a>
+       </li>
+    {% endfor%}
+    </ul>
+    <a href="/app/logout" class="logout">sair </a>
+</div>
+
+{% endblock%}

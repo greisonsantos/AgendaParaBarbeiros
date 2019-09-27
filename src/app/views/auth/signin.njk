@@ -8,9 +8,10 @@
 <body>
   <div class="auth-wrapper">
       <form action="/signin" method="post" >
-
         <img src ="/images/logo.svg" height='42'>
-        <input type="text" name="name" placeholder="Nome Completo">
+
+
+        {%include "partials/flash.njk" %}
         <input type="email" name="email" placeholder="Seu E-mail">
         <input type="password" name="password" placeholder="Senha">
 
