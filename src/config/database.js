@@ -1,17 +1,13 @@
-//dialect qual banco
-//no caso postgres  yarn add pg
-// caso mysql  yarnn add mysql2
-
-module.expots = {
-  dialect: "postgres",
+module.exports = {
+  dialect: "mysql",
   host: "127.0.0.1",
-  username: "",
-  password: " ",
-  database: " ",
+  username: "root",
+  password: "160597",
+  database: "barbeiro",
   operatorAliases: false,
   define: {
     timestamps: true,
-    underscored: true, //  camocase with underline in name campos
+    underscored: true,
     underscoredAll: true
   }
 };

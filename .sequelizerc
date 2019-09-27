@@ -1,4 +1,3 @@
-// necessario para atualizar a mudança de caminhos das pastas
 const path = require("path");
 
 module.exports = {
